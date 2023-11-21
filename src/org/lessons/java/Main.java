@@ -1,9 +1,12 @@
 package org.lessons.java;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
+import org.lessons.java.pojo.Concerto;
 import org.lessons.java.pojo.Evento;
 
 public class Main {
@@ -13,7 +16,7 @@ public class Main {
 		try {
 			
 			System.out.print("Vuoi inserire un nuovo evento (si-no)");
-			String nuovoEvento = in.nextLine();
+			String nuovoEvento = in.nextLine().toLowerCase();
 			
 			System.out.print("Inserisci il nome dell'evento: ");
 			String nomeEvento = in.nextLine();
@@ -35,7 +38,7 @@ public class Main {
 			Evento e = new Evento(nomeEvento, dateEvent, intpTotali);
             
             System.out.print("Vuoi effettuare nuove prenotazioni (si-no)");
-			String nuovoEvento2 = in.nextLine();
+			String nuovoEvento2 = in.nextLine().toLowerCase();
 			
 			if(nuovoEvento2.equalsIgnoreCase("si")) {
 				System.out.print("Quante prenotazioni vuoi effettuare: ");
@@ -65,8 +68,29 @@ public class Main {
 						break;
 					}
 			 }
-			 
 			}
+			
+			System.out.print("Vuoi inserire un evento concerto? (si-no)");
+			String nuovoConcerto = in.nextLine().toLowerCase();
+			
+			if(nuovoConcerto.equals("si")) {
+				
+				System.out.print("Inserisci l'orario dell'evento: (formato HH:mm)");
+				String orario = in.nextLine();
+				
+				System.out.print("Inserisci il prezzo evento: ");
+				String prezzo = in.nextLine();
+				BigDecimal Prezzo = new BigDecimal(prezzo);	
+				
+				Concerto c = new Concerto(nomeEvento, dateEvent, intpTotali,
+				LocalTime.parse(orario), Prezzo);
+				
+				System.out.print(e);
+				System.out.println(c);
+			}else if(nuovoConcerto.equals("no")){
+				System.out.println(e);
+			}
+			
 			
 			in.close();
         } catch (IllegalArgumentException e) {

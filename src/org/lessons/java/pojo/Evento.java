@@ -5,7 +5,7 @@ import java.time.format.DateTimeFormatter;
 
 public class Evento {
 	private String titolo;
-	private LocalDate data;
+	protected LocalDate data;
 	private int nPostiTotali;
 	private int nPrenotati;
 	
@@ -101,6 +101,6 @@ public class Evento {
 				+ "Numero Posti Totali: " + getnPostiTotali() + "\n"
 				+ "Numero Posti Prenotati: " + getnPrenotati() + "\n"
 				+ "Posti disponibili: " + postiDisponibili() + "\n"
-				+ "------------------------------------------------------------";
+				+ "------------------------------------------------------------" + "\n";
 	}
 }
