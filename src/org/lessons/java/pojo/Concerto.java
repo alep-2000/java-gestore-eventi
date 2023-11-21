@@ -12,9 +12,9 @@ public class Concerto extends Evento{
 	private LocalTime ora;
 	private BigDecimal prezzo;
 	
-	public Concerto(String titolo, LocalDate data, int nPostiTotali, LocalTime ora, BigDecimal prezzo) {
+	public Concerto(String titolo, LocalDate data, int nPostiTotali, LocalTime orario, BigDecimal prezzo) {
 		super(titolo, data, nPostiTotali);
-		setOra(ora);
+		setOra(orario);
 		setPrezzo(prezzo);
 	}
 
