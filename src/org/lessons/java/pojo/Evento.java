@@ -88,14 +88,19 @@ public class Evento {
         return dataFormattata + " - " + getTitolo();
     
 	}
+	
+	private int postiDisponibili() {
+		int postiDisponibili = getnPostiTotali() - getnPrenotati();
+		return postiDisponibili;
+	}
 
 	@Override
 	public String toString() {
 		
-		return "Titolo: " + getTitolo() + "\n"
-				+ "Data: " + getData()	+ "\n"
+		return "Data + Titolo: " + dataFormattataTitolo() + "\n"
 				+ "Numero Posti Totali: " + getnPostiTotali() + "\n"
 				+ "Numero Posti Prenotati: " + getnPrenotati() + "\n"
-				+ "Data + Titolo: " + dataFormattataTitolo();
+				+ "Posti disponibili: " + postiDisponibili() + "\n"
+				+ "------------------------------------------------------------";
 	}
 }
