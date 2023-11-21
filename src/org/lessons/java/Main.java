@@ -23,7 +23,7 @@ public class Main {
 			
 			System.out.print("Inserisci la data dell'evento (formato dd-MM-yyyy): ");
 			String dataEvento = in.nextLine();
-			LocalDate dateEvent = LocalDate.parse(dataEvento, 			DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+			LocalDate dateEvent = LocalDate.parse(dataEvento, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
 			
 			System.out.print("Inserisci il numero di posti totali: ");
 			String postiTotali = in.nextLine();
@@ -90,6 +90,7 @@ public class Main {
 			}else if(nuovoConcerto.equals("no")){
 				System.out.println(e);
 			}
+			
 			
 			
 			in.close();
